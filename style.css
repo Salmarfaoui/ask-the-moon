@@ -1,0 +1,109 @@
+body {
+  background-image: url("stars.jpg");
+  background-attachment: fixed;
+  background-size: 100% 250%;
+}
+.header {
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+}
+img {
+  display: flex;
+  justify-content: center;
+  /* padding-left: 320px; */
+  width: 500px;
+}
+.flip-card {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  /* padding-left: 355px; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 500px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card-innerrot {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* -webkit-backface-visibility: hidden; Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+/* .flip-card-front { */
+/* background-color: #bbb; */
+/* color: black; */
+/* } */
+
+/* Style the back side */
+.flip-card-back {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  /* padding-left: 355px; */
+  /* background-color: dodgerblue; */
+  /* color: white; */
+  transform: rotateY(180deg);
+}
+
+#answer {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 3px black;
+  font-size: 30px;
+  font-style: oblique;
+  left: 170px;
+  top: 150px;
+  /* visibility: hidden; */
+  transition: font-size 3s;
+  font-size: 40px;
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.flip-card:hover #answer {
+  visibility: visible;
+}
+button {
+  text-align: center;
+}
+#bttnn {
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  text-align: center;
+}
